@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PORT=$1
+
+lsof -t -i :$PORT 
+
+kill -9 $(lsof -t -i :$PORT)
+echo "Killed processes for port $PORT"
